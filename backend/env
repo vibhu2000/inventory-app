@@ -1,0 +1,9 @@
+MONGO_URI = 
+JWT_SECRET = 
+NODE_ENV = development
+
+FRONTEND_URL = 
+
+EMAIL_USER = mca@outlook.com
+EMAIL_HOST = smtp-mail.outlook.com
+EMAIL_PASS = '#123GYTH'
