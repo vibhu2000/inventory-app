@@ -54,10 +54,15 @@ const EditProduct = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", product?.name);
-
+    formData.append("name_soot", product?.name_soot);
     formData.append("category", product?.category);
     formData.append("quantity", product?.quantity);
     formData.append("price", product?.price);
+    formData.append("selling_price", product?.selling_price);
+    formData.append("location", product?.location);
+    formData.append("mark", product?.mark);
+    formData.append("polish", product?.polish);
+    formData.append("open_pack", product?.open_pack);
     formData.append("description", description);
     if (productImage) {
       formData.append("image", productImage);

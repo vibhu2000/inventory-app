@@ -103,33 +103,43 @@ const ProductList = ({ products, isLoading }) => {
             <table>
               <thead>
                 <tr>
-                  <th>s/n</th>
+                  <th>S. No.</th>
                   <th>Name</th>
-                  <th>Category</th>
-                  <th>Price</th>
+                  <th>Name (soot)</th>
                   <th>Quantity</th>
+                  <th>Price</th>
                   <th>Value</th>
+                  <th>Location</th>
+                  <th>Mark</th>
+                  <th>Zink/Black</th>
+                  <th>Opend/Packed</th>
                   <th>Action</th>
                 </tr>
               </thead>
 
               <tbody>
                 {currentItems.map((product, index) => {
-                  const { _id, name, category, price, quantity } = product;
+                  const { _id, name, name_soot, location, mark, polish, open_pack, category, price, selling_price, quantity } = product;
                   return (
                     <tr key={_id}>
                       <td>{index + 1}</td>
                       <td>{shortenText(name, 16)}</td>
-                      <td>{category}</td>
-                      <td>
-                        {"$"}
-                        {price}
-                      </td>
+                      <td>{name_soot}</td>
                       <td>{quantity}</td>
                       <td>
-                        {"$"}
-                        {price * quantity}
+                        {"Rs."}
+                        {selling_price}
                       </td>
+                      <td>
+                        {"Rs."}
+                        {selling_price * quantity}
+                      </td>
+                      <td>{location}</td>
+                      <td>{mark}</td>
+                      <td>{polish}</td>
+                      <td>{open_pack}</td>
+                      
+                      
                       <td className="icons">
                         <span>
                           <Link to={`/product-detail/${_id}`}>

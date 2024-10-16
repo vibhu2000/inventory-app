@@ -60,21 +60,22 @@ const ProductDetail = () => {
               <span className="badge">Name: </span> &nbsp; {product.name}
             </h4>
             <p>
-              <b>&rarr; SKU : </b> {product.sku}
+              <b>&rarr; Mark : </b> {product.mark}
             </p>
             <p>
-              <b>&rarr; Category : </b> {product.category}
-            </p>
-            <p>
-              <b>&rarr; Price : </b> {"$"}
+              <b>&rarr; Cost Price : </b> {"Rs."}
               {product.price}
+            </p>
+            <p>
+              <b>&rarr; Selling Price : </b> {"Rs."}
+              {product.selling_price}
             </p>
             <p>
               <b>&rarr; Quantity in stock : </b> {product.quantity}
             </p>
             <p>
-              <b>&rarr; Total Value in stock : </b> {"$"}
-              {product.price * product.quantity}
+              <b>&rarr; Total Value in stock : </b> {"Rs."}
+              {product.selling_price * product.quantity}
             </p>
             <hr />
             <div

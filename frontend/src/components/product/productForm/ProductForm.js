@@ -1,3 +1,5 @@
+// Add Product Form
+
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -46,22 +48,40 @@ const ProductForm = ({
             value={product?.name}
             onChange={handleInputChange}
           />
-
-          <label>Product Category:</label>
+          
+          <label>Product Name(soot):</label>
           <input
             type="text"
-            placeholder="Product Category"
-            name="category"
-            value={product?.category}
+            placeholder="Product name(soot)"
+            name="name_soot"
+            value={product?.name_soot}
             onChange={handleInputChange}
           />
 
-          <label>Product Price:</label>
+          <label>Product Mark:</label>
+          <input
+            type="text"
+            placeholder="Product Mark"
+            name="mark"
+            value={product?.mark}
+            onChange={handleInputChange}
+          />
+
+          <label>Product Cost Price:</label>
+          <input
+            type="text"
+            placeholder="Product Cost Price"
+            name="price"
+            value={product?.price}
+            onChange={handleInputChange}
+          />
+
+          <label>Product Selling Price:</label>
           <input
             type="text"
             placeholder="Product Price"
-            name="price"
-            value={product?.price}
+            name="selling_price"
+            value={product?.selling_price}
             onChange={handleInputChange}
           />
 
@@ -71,6 +91,33 @@ const ProductForm = ({
             placeholder="Product Quantity"
             name="quantity"
             value={product?.quantity}
+            onChange={handleInputChange}
+          />
+
+          <label>Product Location:</label>
+          <input
+            type="text"
+            placeholder="Product Location"
+            name="location"
+            value={product?.location}
+            onChange={handleInputChange}
+          />
+          
+          <label>Product Polish:</label>
+          <input
+            type="text"
+            placeholder="Product Polish"
+            name="polish"
+            value={product?.polish}
+            onChange={handleInputChange}
+          />
+          
+          <label>Product Open/Packed:</label>
+          <input
+            type="text"
+            placeholder="Product Open/Pack"
+            name="open_pack"
+            value={product?.open_pack}
             onChange={handleInputChange}
           />
 

@@ -5,10 +5,11 @@ const cloudinary = require("cloudinary").v2;
 
 // Create Prouct
 const createProduct = asyncHandler(async (req, res) => {
-  const { name, sku, category, quantity, price, description } = req.body;
+  const { name, name_soot, location, mark, polish, open_pack, sku, category, quantity, price,  selling_price, description } = req.body;
 
   //   Validation
-  if (!name || !category || !quantity || !price || !description) {
+  // if (!name || !category || !quantity || !price || !description) {
+  if (!name) {
     res.status(400);
     throw new Error("Please fill in all fields");
   }
@@ -41,10 +42,16 @@ const createProduct = asyncHandler(async (req, res) => {
   const product = await Product.create({
     user: req.user.id,
     name,
+    name_soot, 
+    location, 
+    mark, 
+    polish, 
+    open_pack,
     sku,
     category,
     quantity,
     price,
+    selling_price,
     description,
     image: fileData,
   });
@@ -93,7 +100,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 // Update Product
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, category, quantity, price, description } = req.body;
+  const { name, name_soot, location, mark, polish, open_pack, category, quantity, price,  selling_price, description  } = req.body;
   const { id } = req.params;
 
   const product = await Product.findById(id);
@@ -137,9 +144,15 @@ const updateProduct = asyncHandler(async (req, res) => {
     { _id: id },
     {
       name,
+      name_soot, 
+      location, 
+      mark, 
+      polish, 
+      open_pack,
       category,
       quantity,
       price,
+      selling_price,
       description,
       image: Object.keys(fileData).length === 0 ? product?.image : fileData,
     },

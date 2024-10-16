@@ -25,7 +25,7 @@ const AddProduct = () => {
 
   const isLoading = useSelector(selectIsLoading);
 
-  const { name, category, price, quantity } = product;
+  const { name, name_soot, selling_price, location, mark, polish, open_pack, category, price, quantity } = product;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -48,9 +48,15 @@ const AddProduct = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
+    formData.append("name_soot", product?.name_soot);
     formData.append("sku", generateKSKU(category));
     formData.append("category", category);
     formData.append("quantity", Number(quantity));
+    formData.append("selling_price", product?.selling_price);
+    formData.append("location", product?.location);
+    formData.append("mark", product?.mark);
+    formData.append("polish", product?.polish);
+    formData.append("open_pack", product?.open_pack);
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", productImage);
