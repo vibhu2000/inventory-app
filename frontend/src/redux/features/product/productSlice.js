@@ -116,8 +116,8 @@ const productSlice = createSlice({
       const products = action.payload;
       const array = [];
       products.map((item) => {
-        const { price, quantity } = item;
-        const productValue = price * quantity;
+        const { selling_price, quantity } = item;
+        const productValue = selling_price * quantity;
         return array.push(productValue);
       });
       const totalValue = array.reduce((a, b) => {
